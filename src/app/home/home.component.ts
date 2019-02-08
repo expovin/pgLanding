@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     console.log("Create a new Company : "+this.companyName);
     this.companyService.createCompany(this.companyName)
     .subscribe( result =>{
-      console.log(result);
+      console.log(location);
       var OptionCookie = {
         expires:this.expiredDate,
         domain : location.origin
@@ -49,7 +49,8 @@ export class HomeComponent implements OnInit {
 
       this.cookieService.put('companyID',result.id );
       this.cookieService.put('gameID','m' );
-      window.open(location.origin, '_self');
+      let url = location.origin.replace('https://','http://');
+      window.open(url, '_self');
     })
   }
 

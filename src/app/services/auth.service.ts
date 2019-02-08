@@ -57,7 +57,7 @@ export class AuthService {
       'custProp':customProp
     }
     
-    const requestOptions = {                                                                                                                                                                                 
+    const requestOptions = {
       headers: new Headers(headerDict), 
     };
 
